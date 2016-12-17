@@ -242,13 +242,13 @@ public:
 	void encrypt_block(B* b)
 		{
 		assert(b);
-		register B cpy[4];
+		B cpy[4];
 		*((W*)b) ^= MyKeys[0];    // add roundkey
 		*((W*)(b+4)) ^= MyKeys[1];
 		*((W*)(b+8)) ^= MyKeys[2];
 		*((W*)(b+12)) ^= MyKeys[3];
 
-		for(register B r=1; r<14; ++r)
+		for(B r=1; r<14; ++r)
 			{
 			b[ 0] = Sbox[b[ 0]]; b[ 1] = Sbox[b[ 1]];   // sub bytes
 			b[ 2] = Sbox[b[ 2]]; b[ 3] = Sbox[b[ 3]];
@@ -325,13 +325,13 @@ public:
 	void decrypt_block(B* b)
 		{
 		assert(b);
-		register B cpy[4];
+		B cpy[4];
 		*((W*)b) ^= MyKeys[108];   // add roundkey
 		*((W*)(b+4)) ^= MyKeys[109];
 		*((W*)(b+8)) ^= MyKeys[110];
 		*((W*)(b+12)) ^= MyKeys[111];
 
-		for(register B r=13; r>0; --r)
+		for(B r=13; r>0; --r)
 			{
 			*((W*)(b+4)) = ((*((W*)(b+4))>> 8)|(*((W*)(b+4))<<24));  // shift rows right
 			*((W*)(b+8)) = ((*((W*)(b+8))>>16)|(*((W*)(b+8))<<16));

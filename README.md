@@ -1,7 +1,7 @@
-# algorithms
+# Algorithms
 A few useful algorithms implemented in C++.
 
-## supported sort algorithms
+## Supported sort algorithms
 Header only. C++11 not required.
 
 File: algorithms_sort.h
@@ -13,7 +13,7 @@ File: algorithms_sort.h
   - comb_sort
   - heap_sort
 
-## supported crypto algorithms
+## Supported crypto algorithms
 
 ### aes256
 Header only. C++11 not required.

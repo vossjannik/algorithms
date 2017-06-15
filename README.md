@@ -1,6 +1,21 @@
 # Algorithms
 A few useful algorithms implemented in C++.
 
+## Serial Port Streambuffer
+Header only. C++11 required.
+
+Platform: Microsoft Windows
+
+File: serialport_streambuf.h
+```
+auto buf = unchecked_serialport_streambuf(L"COM3");  // open serial port
+auto s = std::basic_iostream<byte>(&buf);  // pass buffer to an io-stream
+s << byte('E') << std::flush;  // send 'E' over the wire
+```
+ 
+This file contains a generic streambuffer, which is used to perform serialport communication.
+The streambuffers are designed to be fully compatible with the standart template library (STL).
+
 ## Directory iterator
 Header only. C++11 not required.
 

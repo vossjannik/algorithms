@@ -1,5 +1,5 @@
-# Algorithms
-A few useful algorithms implemented in C++.
+# Utilities
+A few useful algorithms and classes implemented in C++.
 
 ## Serial Port Streambuffer
 Header only. C++11 required.
